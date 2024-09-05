@@ -43,7 +43,7 @@ namespace Tabla_Multiplicar
         }
         public static void Multiplicar(int n, int multiplicador=0)
         {
-            if (multiplicador > 10)
+            if (multiplicador > 12)
             {
                 return;
             }

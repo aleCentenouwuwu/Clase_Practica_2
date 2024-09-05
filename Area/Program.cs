@@ -76,7 +76,6 @@ namespace Area
        static void MensajeError()
         {
             Console.Clear();
-            Console.WriteLine("so jajajajajajaja :(");
             Console.WriteLine("Error, ingrese informacion correctamente POR FAVOR ^^");
             Console.ReadKey();
             Console.Clear();
@@ -85,7 +84,7 @@ namespace Area
         static void Calcular(double radio)
         {
             double area=(3.141592*(radio*radio));
-            Console.WriteLine($"El area del circulo es de {area}");
+            Console.WriteLine($"El area del circulo es de {area} cm2");
             Console.ReadKey();
             Console.Clear();
         }
@@ -93,7 +92,7 @@ namespace Area
         static void Calcular(double altura, double basetriangulo)
         {
             double area = ((basetriangulo*altura)/2);
-            Console.WriteLine($"El area del triangulo es de {area}");
+            Console.WriteLine($"El area del triangulo es de {area} cm2");
             Console.ReadKey();
             Console.Clear();
         }

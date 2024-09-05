@@ -11,13 +11,11 @@ namespace Convertor
         static void Main(string[] args)
         {
             bool si = true;
-            // errores: por alguna razon el programa termina cuando no hay nada que lo indique
-            // LOS PARAMETROS AHGGGGGGGGGGGGGGGGGGGGGG
             do
             {
                 try
                 {
-                    Console.WriteLine("Hola, que queres convertir a otra unidad de medida hoy? :o"); // pense en que el usuario eligiera, x ejem.
+                    Console.WriteLine("Hola, que queres convertir a otra unidad de medida hoy? :o");
                     Console.WriteLine("1. Centimetros a milimetros");
                     Console.WriteLine("2. Kilometros a Millas");
                     Console.WriteLine("3. metros a Kilometros");
@@ -32,27 +30,27 @@ namespace Convertor
                             break;
                         case 1:
                             Console.Clear();
-                            Console.WriteLine("Ingrese centimetros a convertir");
-                            double Centimetros = Convert.ToDouble(Console.ReadLine());
-                            Convertir(Centimetros);
+                            Console.WriteLine("Ingrese centímetros a convertir");
+                            int centimetros = Convert.ToInt32(Console.ReadLine());
+                            Convertir(centimetros);
                             break;
                         case 2:
                             Console.Clear();
-                            Console.WriteLine("Ingrese kilometros a convertir");
-                            int Kilometros = Convert.ToInt32(Console.ReadLine());
-                            Convertir(Kilometros);
+                            Console.WriteLine("Ingrese kilómetros a convertir");
+                            double kilometros = Convert.ToDouble(Console.ReadLine());
+                            Convertir(kilometros);
                             break;
                         case 3:
                             Console.Clear();
                             Console.WriteLine("Ingrese metros a convertir");
-                            // UInt16 Metros = Convert.ToUInt16(Console.ReadLine());
-                            //  Convertir(Metros);
+                            int metros = Convert.ToInt32(Console.ReadLine());
+                            Convertir2(metros);
                             break;
                         case 4:
                             Console.Clear();
-                            Console.WriteLine("Ingrese centimetros a convertir");
-                            //    UInt32 Centi = Convert.ToUInt32(Console.ReadLine());
-                            //  Convertir(Centi);
+                            Console.WriteLine("Ingrese centímetros a convertir a pulgadas");
+                            double centi = Convert.ToDouble(Console.ReadLine());
+                            Convertir2(centi);
                             break;
                         default:
                             MensajeError();
@@ -63,44 +61,43 @@ namespace Convertor
                 {
                     MensajeError();
                 }
-            } while (!si);
+            } while (si);
         }
         static void MensajeError()
         {
             Console.Clear();
-            Console.WriteLine("jajajajajajaja :(");
             Console.WriteLine("Error, ingrese informacion correctamente POR FAVOR ^^");
             Console.ReadKey();
             Console.Clear();
         }
 
-        static void Convertir(double centimetro)
+        static void Convertir(int centimetros)
         {
-            double milimetro = centimetro * 100;
-            Console.WriteLine($"{centimetro} centimetros son {milimetro} milimetros.");
+            double milimetros = centimetros * 10;
+            Console.WriteLine($"{centimetros} centímetros son {milimetros} milímetros.");
             Console.ReadKey();
             Console.Clear();
         }
-
-        static void Convertir(int kilometros) //me rindo brother, ya no me da la cabeza
+        static void Convertir(double kilometros)
         {
-            int millas = kilometros / 1609;
-            Console.WriteLine($"{kilometros} kilometros son {millas} millas.");
+            double millas = kilometros / 1.609;
+            Console.WriteLine($"{kilometros} kilómetros son {millas} millas.");
             Console.ReadKey();
             Console.Clear();
         }
-        static void Convertir(uint metros)
+        static void Convertir2(int metros)
         {
-            uint kilometros = metros / 1000;
-            Console.WriteLine($"{metros} metros son {kilometros} kilometros.");
+            double kilometros = metros / 1000;
+            Console.WriteLine($"{metros} metros son {kilometros} kilómetros.");
             Console.ReadKey();
             Console.Clear();
         }
-      //'  static void Convertir(int centi)
-        //{
-            //pulgadas = centi / 2.54; // QUEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-          //  Console.ReadKey();
-           // Console.Clear();
-        //}
+        static void Convertir2(double centimetros)
+        {
+            double pulgadas = centimetros / 2.54;
+            Console.WriteLine($"{centimetros} centímetros son {pulgadas} pulgadas.");
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }
